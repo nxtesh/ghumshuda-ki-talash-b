@@ -10,12 +10,11 @@ const canvas = require("canvas");
 const { Canvas, Image, ImageData } = canvas;
 
 
-
 // Configure face-api.js to use canvas for image processing
 faceapi.env.monkeyPatch({ Canvas, Image, ImageData });
 
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 // Middleware
 app.use(cors());
